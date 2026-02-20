@@ -34,13 +34,22 @@ sequelize.sync({ alter: true }).then(() => {
 // Porta
 const PORT = process.env.PORT || 5000;
 // Para rodar local
+const PORT = process.env.PORT || 5000;
+
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`Acesse: http://localhost:${PORT}/api/health`);
+    console.log(`Rotas disponíveis:`);
+    console.log(`   - POST /api/users/register`);
+    console.log(`   - POST /api/users/login`);
+    console.log(`   - GET /api/users`);
+    console.log(`   - POST /api/courses`);
+    console.log(`   - GET /api/courses`);
   });
 }
-  console.log(`📍 Acesse: http://localhost:${PORT}/api/health`);
-  console.log(`📚 Rotas disponíveis:`);
+
+module.exports = app;
   console.log(`   - POST /api/users/register`);
   console.log(`   - POST /api/users/login`);
   console.log(`   - GET /api/users`);
