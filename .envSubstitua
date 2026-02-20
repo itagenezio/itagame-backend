@@ -1,0 +1,1 @@
+DATABASE_URL=postgresql://postgres:sua_senha@localhost:5432/plataforma_educacional_db  sua_senha pela senha que vocˆ criou no PostgreSQL!
